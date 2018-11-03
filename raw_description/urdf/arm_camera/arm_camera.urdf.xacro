@@ -4,9 +4,9 @@
   <xacro:include filename="$(find cob_description)/urdf/common.xacro"/>
   <xacro:include filename="$(find raw_description)/urdf/arm_camera/arm_camera.gazebo.xacro" />
 
-  <xacro:property name="arm_camera_length" value="0.043"/>
-  <xacro:property name="arm_camera_width" value="0.170"/>
-  <xacro:property name="arm_camera_height" value="0.126"/>
+  <xacro:property name="arm_camera_length" value="0.075"/>
+  <xacro:property name="arm_camera_width" value="0.180"/>
+  <xacro:property name="arm_camera_height" value="0.19"/>
   <xacro:property name="safe_value" value="0.01"/>
 
   <xacro:macro name="arm_camera" params="name parent *origin">
@@ -35,7 +35,7 @@
       </inertial>
 
         <visual>
-            <origin xyz="0.083 0 0.0" rpy="0.0 0 0"/>
+            <origin xyz="0.14 0.0 0.0475" rpy="0.0 0 0"/>
             <geometry>
                 <box size="${arm_camera_height} ${arm_camera_width} ${arm_camera_length}"/> <!-- hwl-->
             </geometry>
@@ -45,7 +45,7 @@
         </visual>
         <collision>
             <!-- move gripper_body frame to center of gripper and rotate same as arm_ee_link -->
-            <origin xyz="0.083 0.00 0.00" rpy="0 0 0.0"/>
+            <origin xyz="0.14 0.0 0.0475" rpy="0 0 0.0"/>
             <geometry>
                 <box size="${arm_camera_height} ${arm_camera_width} ${arm_camera_length}"/> <!-- hwl-->
             </geometry>
